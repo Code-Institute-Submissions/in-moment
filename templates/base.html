@@ -2,23 +2,26 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-    />
-    {% endblock meta %} {% block extra_meta %}{% endblock extra_meta %} {% block
-    styles %} {% endblock styles %} {% block extra_styles%}{% endblock
-    extra_styles %} {% block scripts %}{% endblock scripts %}{% block
-    extra_scripts %}{% endblock extra_scripts%}
-    <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
-  </head>
-  <body>
-    {% if messages %}
-    <div></div>
-    {% endif %} {% block content %} {% endblock content %}
-  </body>
+
+<head>
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+  {% endblock meta %}
+  {% block extra_meta %}{% endblock extra_meta %}
+  {% block styles %}{% endblock styles %}
+  {% block extra_styles%}{% endblock extra_styles %}
+  {% block scripts %}{% endblock scripts %}
+  {% block extra_scripts %}{% endblock extra_scripts %}
+  <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
+</head>
+
+<body>
+  {% if messages %}
+  <div></div>
+  {% endif %} {% block content %} {% endblock content %}
+</body>
+
 </html>
