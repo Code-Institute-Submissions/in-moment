@@ -10,18 +10,37 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
   {% endblock meta %}
-  {% block extra_meta %}{% endblock extra_meta %}
-  {% block styles %}{% endblock styles %}
-  {% block extra_styles%}{% endblock extra_styles %}
-  {% block scripts %}{% endblock scripts %}
-  {% block extra_scripts %}{% endblock extra_scripts %}
+  {% block styles %}
+  <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+  {% endblock styles %}
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
 <body>
+  <header>
+    <img src="{% static 'assets/open-menu.png'%}" class="nav-btn" alt="">
+    <a href="" class="logo">E-Commerce</a>
+    <span class="search-btn">
+      <img src="{% static 'assets/search.png' %}" alt="">
+    </span>
+    <nav class="nav">
+      <ul class="navbar">
+        <li class="nav-close"><img src="{% static 'assets/close.png'%}" alt=""></li>
+        <li class="nav-item">Home</li>
+        <li class="nav-item">Account</li>
+        <li class="nav-item">Cart</li>
+      </ul>
+    </nav>
+  </header>
   {% if messages %}
   <div></div>
-  {% endif %} {% block content %} {% endblock content %}
+  {% endif %}
+  {% block content %}{% endblock content %}
+  {% block scripts %}
+  <script src="{% static 'scripts/jquery.min.js' %}"></script>
+  <script src="{% static 'scripts/nav.js' %}"></script>
+  {% endblock scripts %}
 </body>
 
 </html>
