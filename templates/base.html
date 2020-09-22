@@ -13,6 +13,7 @@
   {% block styles %}
   <link rel="stylesheet" href="{% static 'styles/base.css' %}">
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/products.css' %}">
   {% endblock styles %}
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
@@ -28,6 +29,9 @@
       <ul class="navbar">
         <li class="nav-close"><img src="{% static 'assets/close.png'%}" alt=""></li>
         <li class="nav-item">Home</li>
+        <a href="{% url 'products' %}">
+          <li class="nav-item">Products</li>
+        </a>
         <li class="nav-item">Account</li>
         <li class="nav-item">Cart</li>
       </ul>
@@ -36,8 +40,10 @@
   {% if messages %}
   <div></div>
   {% endif %}
-  {% block content %}{% endblock content %}
-  {% block scripts %}
+  <div class="app">
+    {% block content %}{% endblock content %}
+    {% block scripts %}
+  </div>
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
   {% endblock scripts %}

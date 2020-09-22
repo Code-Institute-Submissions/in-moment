@@ -2,7 +2,21 @@
 {% load static %}
 
 {% block content %}
-<br>
-<br>
-<h1>{{products}}</h1>
+<div class="products">
+    {% for product in products %}
+    <div class="product">
+        <a href="{% url 'product_detail' product.id %}"><img class="product_img" src="{{ product.image_url}}"
+                alt=""></a>
+        <div class="product_info">
+            <p class="product_name">{{ product.name }}</p>
+            <p class="product_price">&euro; {{ product.price }}</p>
+            {% if product.rating %}
+            <p class="prodcut_rating">&#9733; {{ product.rating }}</p>
+            {% else %}
+            <p class="prodcut_rating">No rating</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}
