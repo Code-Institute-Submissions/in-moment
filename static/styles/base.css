@@ -1,45 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 :root {
-    --color-1: #111b1e;
-    --color-2: #2f4c58;
-    --color-3: #63a583;
-    --color-4: #6e93d6;
-    --color-5: #e4dbd9;
+    --color-1: #69A2B0;
+    --color-2: #E05263;
+    --color-3: #E0CBA8;
+    --color-4: #67597A;
+    --color-5: #544E61;
 }
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    background-color: #e4dbd9;
+html {
     font-family: 'Lato', sans-serif;
-    color: #111b1e;
+}
+
+.app {
     width: 100%;
-    color: #FFFFFF;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 ul {
     list-style: none;
 }
 
-a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
 input[type=text] {
+    width: 90%;
     padding: 1em;
     border: none;
+    border-radius: 0;
     border-bottom: 2px solid var(--color-4);
+    outline: none;
 }
 
-.app {
-    padding-top: 2em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+select {
+    width: 90%;
+    padding: 1em;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--color-4);
+    outline: none;
+}
+
+input[type=text]:focus {
+    border-bottom: 2px solid var(--color-1);
 }

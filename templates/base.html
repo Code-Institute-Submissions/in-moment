@@ -11,6 +11,10 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
   {% endblock meta %}
   {% block styles %}
+  <!-- Google API Icons -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
   <link rel="stylesheet" href="{% static 'styles/base.css' %}">
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" href="{% static 'styles/products.css' %}">
@@ -19,31 +23,51 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header>
-    <img src="{% static 'assets/open-menu.png'%}" class="nav-btn" alt="">
-    <a href="" class="logo">E-Commerce</a>
-    <span class="search-btn">
-      <img src="{% static 'assets/search.png' %}" alt="">
-    </span>
-    <nav class="nav">
-      <ul class="navbar">
-        <li class="nav-close"><img src="{% static 'assets/close.png'%}" alt=""></li>
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <span id="nav-btn" class="material-icons-outlined">
+        menu
+      </span>
+      <div>
+        <a class="logo" href="">inMoment</a>
+      </div>
+      <div class="sub-actions">
+        <span id="search-btn" class="material-icons-outlined">
+          search
+        </span>
+        <span id="filter-btn" class="material-icons-outlined">
+          filter_alt
+        </span>
+      </div>
+    </div>
+    <!-- Nav Bar -->
+    <nav id="nav-bar" class="nav-bar">
+      <ul class="nav">
         <li class="nav-item">Home</li>
-        <a href="{% url 'products' %}">
-          <li class="nav-item">Products</li>
-        </a>
-        <li class="nav-item">Account</li>
-        <li class="nav-item">Cart</li>
+        <li class="nav-item">Featured</li>
+        <li class="nav-item">Tops</li>
+        <li class="nav-item">My Account</li>
       </ul>
     </nav>
+    <!-- Search Bar -->
+    <div id="search-bar" class="search-bar">
+      <input type="text">
+    </div>
+    <!-- Filter Bar -->
+    <div id="filter-bar" class="filter-bar">
+      <select name="" id=""></select>
+    </div>
   </header>
   {% if messages %}
   <div></div>
   {% endif %}
   <div class="app">
-    {% block content %}{% endblock content %}
-    {% block scripts %}
+    {% block content %}
+    {% endblock content %}
   </div>
+  {% block scripts %}
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
   {% endblock scripts %}
