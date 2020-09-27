@@ -21,8 +21,8 @@ html {
 
 .app {
     width: 100%;
-    min-height: 100vh;
     margin-top: 3.7em;
+    min-height: calc(100vh - 3.7em);
 }
 
 a {

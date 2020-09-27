@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% load static %}
 <!-- Cart template -->
 {% block content %}
+{% if cart_items %}
 <div class="cart">
-    {% if cart_items %}
     {% for item in cart_items %}
     <div class="cart-item">
         <a class="product" href="{% url 'product_detail' item.product.id %}">
@@ -40,7 +40,13 @@
             <div class="btn">Checkout</div>
         </div>
     </div>
-    {% endif %}
+</div>
+{% else %}
+<div class="no-items">
+    <h1>Oops seems like you forgot to select products you want to buy...</h1>
+    <a href="{% url 'products' %}" class="">Back to shopping</a>
+</div>
+{% endif %}
 </div>
 {% endblock content %}
 {% block scripts %}
