@@ -1,13 +1,11 @@
 $(() => {
     const navBtn = $("#nav-btn");
     const searchBtn = $("#search-btn");
-    const filterBtn = $("#filter-btn");
     const navBar = $("#nav-bar");
     const searchBar = $("#search-bar");
-    const filterBar = $("#filter-bar");
 
-    const btns = [navBtn, searchBtn, filterBtn];
-    const bars = [navBar, searchBar, filterBar];
+    const btns = [navBtn, searchBtn];
+    const bars = [navBar, searchBar];
 
     let barOpen = false;
     let btnActive = false;

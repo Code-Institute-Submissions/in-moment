@@ -1,0 +1,57 @@
+.products {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em 0;
+    align-items: flex-start;
+}
+
+.product {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+
+.product-img {
+    width: 100%; 
+    background-color: gray;
+}
+
+.product-name {
+    padding: .5em;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.product-price {
+    padding: .5em;
+    font-size: .9rem;
+}
+
+.product-rating {
+    padding: .5em;
+    font-size: .9rem;
+}
+
+.product-description {
+    padding: .5em;
+}
+
+.product-detail {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+/* Filter Bar */
+.filter-bar {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5.9em;
+    justify-content: space-between;
+    align-items: center;
+}

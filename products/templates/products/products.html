@@ -2,21 +2,29 @@
 {% load static %}
 
 {% block content %}
+<div class="filter-bar">
+    <p>{{ products|length }} {% if products|length == 1 %} product {% else %} products {% endif %}</p>
+    <select name="sort" id="sort">
+        <option value="reset" {% if current_sorting == "None_None" %}selected{% endif %}>Sort by...</option>
+        <option value="price_asc" {% if current_sorting == "price_asc" %}selected{% endif %}>Price (low to high)
+        </option>
+        <option value="price_desc" {% if current_sorting == "price_desc" %}selected{% endif %}>Price (high to low)
+        </option>
+        <option value="name_asc" {% if current_sorting == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
+        <option value="name_desc" {% if current_sorting == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
+    </select>
+</div>
 <div class="products">
     {% for product in products %}
-    <div class="product">
-        <a href="{% url 'product_detail' product.id %}"><img class="product_img" src="{{ product.image_url}}"
-                alt=""></a>
-        <div class="product_info">
-            <p class="product_name">{{ product.name }}</p>
-            <p class="product_price">&euro; {{ product.price }}</p>
-            {% if product.rating %}
-            <p class="prodcut_rating">&#9733; {{ product.rating }}</p>
-            {% else %}
-            <p class="prodcut_rating">No rating</p>
-            {% endif %}
-        </div>
-    </div>
+    <a class="product" href="{% url 'product_detail' product.id %}">
+        {% if product.image %}
+        <img class="product-img" src="{{ product.image}}" alt="Image of a product.">
+        {% else %}
+        <img class="product-img" src="{% static 'assets/noimage.png' %}" alt="Image of a product.">
+        {% endif %}
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">&euro; {{ product.price }}</p>
+    </a>
     {% endfor %}
 </div>
 {% endblock content %}

@@ -19,10 +19,21 @@
 .active-btn {
     color: var(--color-1);
 }
+
+.logo {
+    font-size: 2rem;
+    font-family: 'Montez', cursive;
+}
+
+.sub-actions {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
 /* Nav Bar */
 .nav-bar {
     position: fixed;
-    top: 2em;
+    top: 4em;
     left: 0;
     right: 0;
     background-color: var(--color-3);
@@ -55,21 +66,7 @@
 /* Search Bar */
 .search-bar {
     position: fixed;
-    top: 2em;
-    left: 0;
-    right: 0;
-    display: flex;
-    padding: 1em;
-    justify-content: center;
-    background-color: var(--color-3);
-    z-index: 1;
-    transform: translateY(-100%);
-    transition: all .5s ease-in-out;
-}
-/* Filter Bar */
-.filter-bar {
-    position: fixed;
-    top: 2em;
+    top: 4em;
     left: 0;
     right: 0;
     display: flex;

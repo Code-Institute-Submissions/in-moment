@@ -4,13 +4,10 @@
 <html lang="en">
 
 <head>
-  {% block meta %}
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta charset="UTF-8" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
-  {% endblock meta %}
-  {% block styles %}
   <!-- Google API Icons -->
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -18,7 +15,6 @@
   <link rel="stylesheet" href="{% static 'styles/base.css' %}">
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" href="{% static 'styles/products.css' %}">
-  {% endblock styles %}
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
@@ -31,34 +27,50 @@
         menu
       </span>
       <div>
-        <a class="logo" href="">inMoment</a>
+        <a href="{% url 'home' %}" class="logo" href="">inMoment</a>
       </div>
       <div class="sub-actions">
         <span id="search-btn" class="material-icons-outlined">
           search
         </span>
-        <span id="filter-btn" class="material-icons-outlined">
-          filter_alt
+        <span class="material-icons-outlined">
+          shopping_cart
         </span>
       </div>
     </div>
     <!-- Nav Bar -->
     <nav id="nav-bar" class="nav-bar">
       <ul class="nav">
-        <li class="nav-item">Home</li>
-        <li class="nav-item">Featured</li>
-        <li class="nav-item">Tops</li>
-        <li class="nav-item">My Account</li>
+        <a class="nav-item" href="{% url 'home' %}">
+          <li>Home</li>
+        </a>
+        <a class="nav-item" href="{% url 'products' %}">
+          <li>Featured</li>
+        </a>
+        <a class="nav-item" href="{% url 'products' %}?category=tops">
+          <li>Tops</li>
+        </a>
+        <a class="nav-item" href="{% url 'products' %}?category=bottom">
+          <li>Bottom</li>
+        </a>
+        <a class="nav-item" href="{% url 'products' %}?category=shoes">
+          <li>Shoes</li>
+        </a>
+        <a class="nav-item" href="{% url 'products' %}?category=accessories">
+          <li>Accessories</li>
+        </a>
+        <a class="nav-item" href="">
+          <li>My Account</li>
+        </a>
       </ul>
     </nav>
     <!-- Search Bar -->
-    <div id="search-bar" class="search-bar">
-      <input type="text">
-    </div>
-    <!-- Filter Bar -->
-    <div id="filter-bar" class="filter-bar">
-      <select name="" id=""></select>
-    </div>
+    <form method="GET" action="{% url 'products' %}" id="search-bar" class="search-bar">
+      <input type="text" name="q" placeholder="Search for product...">
+      <span id="search-btn" class="material-icons-outlined">
+        search
+      </span>
+    </form>
   </header>
   {% if messages %}
   <div></div>
@@ -67,10 +79,9 @@
     {% block content %}
     {% endblock content %}
   </div>
-  {% block scripts %}
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
-  {% endblock scripts %}
+  <script src="{% static 'scripts/sort.js' %}"></script>
 </body>
 
 </html>

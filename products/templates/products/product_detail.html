@@ -2,11 +2,15 @@
 {% load static %}
 
 {% block content %}
-<div class="product_detail">
-    <img class="product_img" src="{{ product.image_url}}" alt="">
-    <p class="product_name">{{ product.name }}</p>
-    <p class="product_price">&euro; {{ product.price }}</p>
-    <p class="prodcut_rating">&#9733; {{ product.rating }}</p>
-    <p class="product_description">{{ product.description }}</p>
+<div class="product-detail">
+    {% if product.image %}
+    <img class="product-img" src="{{ product.image}}" alt="Image of a product.">
+    {% else %}
+    <img class="product-img" src="{% static 'assets/noimage.png' %}" alt="Image of a product.">
+    {% endif %}
+    <p class="product-name">{{ product.name }}</p>
+    <p class="product-price">&euro; {{ product.price }}</p>
+    <p class="product-rating">&#9733; {{ product.rating }}</p>
+    <p class="product-description">{{ product.description }}</p>
 </div>
 {% endblock content %}
