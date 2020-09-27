@@ -1,3 +1,4 @@
+/* Stylesheet for product related elements. */
 .products {
     width: 90%;
     margin: 0 auto;
@@ -46,6 +47,14 @@
     margin: 0 auto;
     margin-top: 5em;
 }
+
+.product-form {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Filter Bar */
 .filter-bar {
     width: 90%;

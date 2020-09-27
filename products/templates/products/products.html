@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-
+<!-- Products Template -->
 {% block content %}
+<!-- Bar containing number of products found by category and a sort bar. -->
 <div class="filter-bar">
     <p>{{ products|length }} {% if products|length == 1 %} product {% else %} products {% endif %}</p>
     <select name="sort" id="sort">
@@ -14,7 +15,9 @@
         <option value="name_desc" {% if current_sorting == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
     </select>
 </div>
+<!-- Products grid. -->
 <div class="products">
+    <!-- Product container. -->
     {% for product in products %}
     <a class="product" href="{% url 'product_detail' product.id %}">
         {% if product.image %}

@@ -1,3 +1,4 @@
+/* Stylesheet for header, search and navigation bars. */
 /* Action Bar */
 .action-bar {
     position: fixed;
@@ -71,13 +72,13 @@
     right: 0;
     display: flex;
     padding: 1em;
-    justify-content: center;
+    justify-content: space-around;
     background-color: var(--color-3);
     z-index: 1;
     transform: translateY(-100%);
     transition: all .5s ease-in-out;
 }
-/* Open Bar */
+/* Open Bar Animation */
 .open-bar {
     transform: translateY(0);
 }

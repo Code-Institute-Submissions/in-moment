@@ -12,9 +12,11 @@
   <link
     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
     rel="stylesheet">
+  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="{% static 'styles/base.css' %}">
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" href="{% static 'styles/products.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
@@ -67,21 +69,24 @@
     <!-- Search Bar -->
     <form method="GET" action="{% url 'products' %}" id="search-bar" class="search-bar">
       <input type="text" name="q" placeholder="Search for product...">
-      <span id="search-btn" class="material-icons-outlined">
-        search
-      </span>
+      <button class="material-icons-outlined">search</button>
     </form>
   </header>
+  <!-- Toasts -->
   {% if messages %}
   <div></div>
   {% endif %}
+  <!-- App/Main Contetnt -->
   <div class="app">
     {% block content %}
     {% endblock content %}
   </div>
+  <!-- Custom Scripts -->
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
   <script src="{% static 'scripts/sort.js' %}"></script>
+  {% block scripts %}
+  {% endblock scripts %}
 </body>
 
 </html>

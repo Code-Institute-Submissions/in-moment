@@ -3,13 +3,14 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+# Global context.
 def cart_contents(request):
-
+    # Default variables.
     cart_items = []
     total = 0
     product_count = 0
     cart = request.session.get("cart", {})
-
+    # Populating default variables.
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price
@@ -19,16 +20,16 @@ def cart_contents(request):
             "quantity": quantity,
             "product": product,
         })
-
+    # Calculate delivery cost of products.
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE * 100)
+        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else :
         delivery = 0
         free_delivery_delta = 0
-
+    # Calculate grand total of purchase.
     grand_total = delivery + total
-
+    # Creating global context variable.
     context = {
         "cart_items": cart_items,
         "total": total,

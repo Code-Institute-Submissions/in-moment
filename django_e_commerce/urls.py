@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Adding all app urls to main url handler.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include("allauth.urls")),
     path("", include("home.urls")),
     path("products/", include("products.urls")),
     path("cart/", include("cart.urls")),
+    path("checkout/", include("checkout.urls")),
 ]

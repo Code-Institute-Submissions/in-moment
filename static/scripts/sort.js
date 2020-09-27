@@ -1,5 +1,11 @@
+// Script allowing users to sort shop items by criteria.
 $(() => {
     $("#sort").change(() => {
+        /*
+            Getting current url and value from select element on page.
+            Splitting value of a selector to sort and direction.
+            Changing url paramas according to selector values.
+        */
         const selector = $("#sort");
         let currentUrl = new URL(window.location);
 

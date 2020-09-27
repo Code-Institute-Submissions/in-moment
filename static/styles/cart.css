@@ -1,0 +1,75 @@
+/* Stylesheet related to all cart templates. */
+.cart {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5.9em;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.cart-item .product {
+    margin: 0;
+}
+
+.cart-details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-details * {
+    margin: .5em;
+}
+
+.cart-actions {
+    margin: 1em 0;
+}
+
+.cart-actions * {
+    margin-top: 1em;
+}
+
+.update-form {
+    display: flex;
+    justify-content: center;
+}
+
+.update-form input[type=number] {
+    width: 50%;
+}
+
+.sub-total {
+    font-size: 1.1rem;
+}
+
+.grand-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.update-item {
+    background-color: var(--color-4);
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-buttons .btn {
+    font-size: 1.2rem;
+    width: unset;
+    padding: .5em 1em;
+}
+
+.cart-add {
+    font-size: .9rem;
+}
