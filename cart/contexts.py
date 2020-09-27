@@ -1,5 +1,5 @@
 from decimal import Decimal
-from djanngo.conf import settings
+from django.conf import settings
 
 def cart_contents(request):
 
