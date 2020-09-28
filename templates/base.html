@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" href="{% static 'styles/products.css' %}">
   <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/checkout.css' %}">
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
@@ -86,8 +87,10 @@
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
   <script src="{% static 'scripts/sort.js' %}"></script>
+  <script src="https://js.stripe.com/v3/"></script>
   {% block scripts %}
   {% endblock scripts %}
+  <script src="{% static 'scripts/stripe_elements.js' %}"></script>
 </body>
 
 </html>

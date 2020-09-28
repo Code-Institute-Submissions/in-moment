@@ -1,0 +1,49 @@
+<!-- Checkout Page Template -->
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="checkout">
+    <form class="checkout-form" action="{% url 'checkout'%}" method="POST">
+        <fieldset class="checkout-fieldset">
+            <legend class="checkout-legend">Details</legend>
+            <label class="checkout-label" for="full_name">Full Name</label>
+            {{ order_form.full_name}}
+            <label class="checkout-label" for="email">Email</label>
+            {{ order_form.email}}
+        </fieldset>
+        <fieldset class="checkout-fieldset">
+            <legend class="checkout-legend">Delivery</legend>
+            <label class="checkout-label" for="phone_number">Phone Number</label>
+            {{ order_form.phone_number}}
+            <label class="checkout-label" for="country">Country</label>
+            {{ order_form.country}}
+            <label class="checkout-label" for="postcode">Post Code</label>
+            {{ order_form.postcode}}
+            <label class="checkout-label" for="town_or_city">City</label>
+            {{ order_form.town_or_city}}
+            <label class="checkout-label" for="street_address1">Street Address 1</label>
+            {{ order_form.street_address1}}
+            <label class="checkout-label" for="street_address2">Street Address 2</label>
+            {{ order_form.street_address2}}
+            <label class="checkout-label" for="county">County</label>
+            {{ order_form.county}}
+            <div>
+                {% if user.is_authenticated %}
+                <label for="">Save this delivery information to my profile</label>
+                <input type="checkbox">
+                {% else %}
+                <a href="">Sign up</a>
+                <a href="">Sign in</a>
+                {% endif %}
+            </div>
+        </fieldset>
+        <fieldset class="checkout-fieldset">
+            <legend class="checkout-legend">Payment</legend>
+            <div id="card-element"></div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}
+{% block scripts %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+{% endblock scripts %}

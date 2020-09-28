@@ -21,8 +21,8 @@ html {
 
 .app {
     width: 100%;
-    margin-top: 3.7em;
-    min-height: calc(100vh - 3.7em);
+    margin-top: 5em;
+    min-height: calc(100vh - 5em);
 }
 
 a {
@@ -34,7 +34,8 @@ ul {
     list-style: none;
 }
 
-input[type=text] {
+input[type=text],
+input[type=email] {
     width: 80%;
     padding: 1em;
     border: none;
@@ -54,7 +55,8 @@ select {
 }
 
 input[type=text]:focus,
-input[type=number]:focus {
+input[type=number]:focus,
+input[type=email]:focus {
     border-bottom: 2px solid var(--color-1);
 }
 

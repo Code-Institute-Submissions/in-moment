@@ -27,17 +27,17 @@
     </div>
     {% endfor %}
     <div class="cart-actions">
-        <p class="sub-total">Sub-total: ${{ total|floatformat:2 }}</p>
-        <p class="delivery">Delivery: ${{ delivery|floatformat:2 }}</p>
-        <p class="grand-total">Grand-total: ${{ grand_total|floatformat:2 }}</p>
+        <p class="sub-total">Sub-total: &euro;{{ total|floatformat:2 }}</p>
+        <p class="delivery">Delivery: &euro;{{ delivery|floatformat:2 }}</p>
+        <p class="grand-total">Grand-total: &euro;{{ grand_total|floatformat:2 }}</p>
         {% if free_delivery_delta > 0 %}
         <p class="mb-1 text-danger">
-            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+            You could get free delivery by spending just <strong>&euro;{{ free_delivery_delta }}</strong> more!
         </p>
         {% endif %}
         <div class="cart-buttons">
             <a href="{% url 'products' %}" class="btn secondary">Back to shopping</a>
-            <div class="btn">Checkout</div>
+            <a href="{% url 'checkout' %}" class="btn">Checkout</a>
         </div>
     </div>
 </div>
