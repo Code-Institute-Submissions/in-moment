@@ -1,7 +1,8 @@
 <!-- Checkout Page Template -->
 {% extends "base.html" %} {% load static %} {% block content %}
 <div class="checkout">
-    <form class="checkout-form" action="{% url 'checkout'%}" method="POST">
+    <form id="payment-form" class="checkout-form" action="{% url 'checkout'%}" method="POST">
+        {% csrf_token %}
         <fieldset class="checkout-fieldset">
             <legend class="checkout-legend">Details</legend>
             <label class="checkout-label" for="full_name">Full Name</label>
@@ -39,6 +40,8 @@
             <legend class="checkout-legend">Payment</legend>
             <div id="card-element"></div>
         </fieldset>
+        <div id="card-errors"></div>
+        <button id="submit-button">Pay now</button>
     </form>
 </div>
 {% endblock content %}
