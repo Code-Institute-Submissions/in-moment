@@ -61,7 +61,7 @@
     cursor: pointer;
 }
 
-.nav-item:last-child {
+.nav-item:nth-last-child(2) {
     border-top: 1px solid #000;
 }
 /* Search Bar */

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{% static 'styles/products.css' %}">
   <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
   <link rel="stylesheet" href="{% static 'styles/checkout.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/auth.css' %}">
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
@@ -63,9 +64,21 @@
         <a class="nav-item" href="{% url 'products' %}?category=accessories">
           <li>Accessories</li>
         </a>
-        <a class="nav-item" href="">
+        {% if user.is_authenticated %}
+        <a class="nav-item" href="{% url 'profile'%}">
           <li>My Account</li>
         </a>
+        <a class="nav-item" href="{% url 'account_logout'%}">
+          <li>Logout</li>
+        </a>
+        {% else %}
+        <a class="nav-item" href="{% url 'account_login' %}">
+          <li>Login</li>
+        </a>
+        <a class="nav-item" href="{% url 'account_signup' %}">
+          <li>Register</li>
+        </a>
+        {% endif %}
       </ul>
     </nav>
     <!-- Search Bar -->
