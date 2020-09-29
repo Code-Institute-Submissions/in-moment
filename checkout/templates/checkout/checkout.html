@@ -29,7 +29,7 @@
             <div>
                 {% if user.is_authenticated %}
                 <label for="">Save this delivery information to my profile</label>
-                <input type="checkbox">
+                <input type="checkbox" id="id_save_info" name="save-info" checked>
                 {% else %}
                 <a href="">Sign up</a>
                 <a href="">Sign in</a>

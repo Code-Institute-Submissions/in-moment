@@ -6,5 +6,10 @@
         {{ form }}
         <button>Update profile</button>
     </form>
+    {% for order in orders %}
+    <div>{{ order.order_number|truncatechars:6}}</div>
+    <div>{{ order.date }}</div>
+    <div>{{ order.grnad_total}}</div>
+    {% endfor %}
 </div>
 {% endblock content %}
