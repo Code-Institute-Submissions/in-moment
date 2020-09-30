@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "cart",
     "checkout",
     "profiles",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -163,7 +164,17 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+if "USE_AWS" in os.environ:
+    AWS_STORAGE_BUCKET_NAME = "in-moment"
+    AWS_S3_REGION_NAME = "eu"
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s.amazonaws.com"
 
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}"
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 50
