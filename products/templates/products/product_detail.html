@@ -19,5 +19,9 @@
         <input class="cart-add" type="submit" value="Add to Cart">
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
     </form>
+    {% if request.user.is_superuser %}
+    <a id="update" href="{% url 'edit_product' product.id %}">Update</a>
+    <a href="{% url 'delete_product' product.id %}">Delete</a>
+    {% endif %}
 </div>
 {% endblock content %}

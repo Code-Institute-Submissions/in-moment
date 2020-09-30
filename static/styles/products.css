@@ -48,6 +48,18 @@
     margin-top: 5em;
 }
 
+.product-detail a {
+    padding: .5em 1em;
+    color: #fff;
+    font-weight: 700;
+    background-color: var(--color-2);
+    margin: 1em .5em;
+}
+
+#update {
+    background-color: var(--color-1);
+}
+
 .product-form {
     padding: 1em;
     display: flex;
