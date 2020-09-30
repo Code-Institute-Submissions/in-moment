@@ -65,11 +65,16 @@
         <a class="nav-item" href="{% url 'products' %}?category=accessories">
           <li>Accessories</li>
         </a>
-        {% if user.is_authenticated %}
-        <a class="nav-item" href="{% url 'profile'%}">
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a class="nav-item" href="{% url 'add_product' %}">
+          <li>Add product </li>
+        </a>
+        {% endif %}
+        <a class="nav-item" href="{% url 'profile' %}">
           <li>My Account</li>
         </a>
-        <a class="nav-item" href="{% url 'account_logout'%}">
+        <a class="nav-item" href="{% url 'account_logout' %}">
           <li>Logout</li>
         </a>
         {% else %}
