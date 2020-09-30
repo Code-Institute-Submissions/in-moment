@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect, HttpResponse, reverse
 
 # Create your views here.
@@ -20,6 +21,7 @@ def add_to_cart(request, item_id):
     else:
         cart[item_id] = quantity
     # Add cart to session.
+    messages.success(request, "Product added to cart.")
     request.session["cart"] = cart
     return redirect(redirect_url)
 
@@ -32,7 +34,7 @@ def update_cart(request, item_id):
         cart[item_id] = quantity
     else:
         cart.pop(item_id)
-
+    messages.info(request, "Cart have been updated.")
     request.session["cart"] = cart
     return redirect(reverse("cart"))
 
@@ -42,7 +44,7 @@ def remove_from_cart(request, item_id):
         cart = request.session.get("cart", {})
 
         cart.pop(item_id)
-
+        messages.info(request, "Product was removed from cart.")
         request.session["cart"] = cart
         return redirect("cart")
     except Exception as e:

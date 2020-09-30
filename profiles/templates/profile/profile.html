@@ -1,6 +1,7 @@
 <!-- Home Page Template -->
 {% extends "base.html" %} {% load static %} {% block content %}
 <div class="profile">
+    <h1>Account Details</h1>
     <form action="{% url 'profile' %}">
         {% csrf_token %}
         {{ form }}

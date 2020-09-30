@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{% static 'styles/checkout.css' %}">
   <link rel="stylesheet" href="{% static 'styles/auth.css' %}">
   <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/toasts.css' %}">
   <title>E-Commerce{% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
@@ -95,7 +96,21 @@
   </header>
   <!-- Toasts -->
   {% if messages %}
-  <div></div>
+  <div id="message" class="message">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
   {% endif %}
   <!-- App/Main Contetnt -->
   <div class="app">
@@ -106,6 +121,7 @@
   <script src="{% static 'scripts/jquery.min.js' %}"></script>
   <script src="{% static 'scripts/nav.js' %}"></script>
   <script src="{% static 'scripts/sort.js' %}"></script>
+  <script src="{% static 'scripts/toast.js' %}"></script>
   <script src="https://js.stripe.com/v3/"></script>
   {% block scripts %}
   {% endblock scripts %}

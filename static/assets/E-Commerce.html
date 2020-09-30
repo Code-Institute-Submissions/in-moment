@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://localhost:8000/products/edit/4/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <!-- Google API Icons -->
+  <link href="./E-Commerce_files/css" rel="stylesheet">
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="./E-Commerce_files/base.css">
+  <link rel="stylesheet" href="./E-Commerce_files/home.css">
+  <link rel="stylesheet" href="./E-Commerce_files/header.css">
+  <link rel="stylesheet" href="./E-Commerce_files/products.css">
+  <link rel="stylesheet" href="./E-Commerce_files/cart.css">
+  <link rel="stylesheet" href="./E-Commerce_files/checkout.css">
+  <link rel="stylesheet" href="./E-Commerce_files/auth.css">
+  <link rel="stylesheet" href="./E-Commerce_files/profile.css">
+  <link rel="stylesheet" href="./E-Commerce_files/toasts.css">
+  <title>E-Commerce</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <span id="nav-btn" class="material-icons-outlined">
+        menu
+      </span>
+      <div>
+        <a href="http://localhost:8000/" class="logo">inMoment</a>
+      </div>
+      <div class="sub-actions">
+        <span id="search-btn" class="material-icons-outlined">
+          search
+        </span>
+        <a href="http://localhost:8000/cart/" class="material-icons-outlined">
+          shopping_cart
+        </a>
+      </div>
+    </div>
+    <!-- Nav Bar -->
+    <nav id="nav-bar" class="nav-bar">
+      <ul class="nav">
+        <a class="nav-item" href="http://localhost:8000/">
+          <li>Home</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/products/">
+          <li>Featured</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/products/?category=tops">
+          <li>Tops</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/products/?category=bottom">
+          <li>Bottom</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/products/?category=shoes">
+          <li>Shoes</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/products/?category=accessories">
+          <li>Accessories</li>
+        </a>
+        
+        
+        <a class="nav-item" href="http://localhost:8000/products/add/">
+          <li>Add product </li>
+        </a>
+        
+        <a class="nav-item" href="http://localhost:8000/profile/">
+          <li>My Account</li>
+        </a>
+        <a class="nav-item" href="http://localhost:8000/accounts/logout/">
+          <li>Logout</li>
+        </a>
+        
+      </ul>
+    </nav>
+    <!-- Search Bar -->
+    <form method="GET" action="http://localhost:8000/products/" id="search-bar" class="search-bar">
+      <input type="text" name="q" placeholder="Search for product...">
+      <button class="material-icons-outlined">search</button>
+    </form>
+  </header>
+  <!-- Toasts -->
+  
+  <!-- App/Main Contetnt -->
+  <div class="app">
+    
+<div class="add_product">
+    <form method="POST" action="http://localhost:8000/products/edit/4/" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" value="W4vcYhW0TcB533nvZoJcOHdfjFlKbWuv9Rciya0vAiF2E4qpoRpt8k3E6q0OlF2s">
+        <label for="id_category">Category:</label><select name="category" id="id_category">
+  <option value="5" selected="">Tops</option>
+
+  <option value="6">Bottom</option>
+
+  <option value="7">Shoes</option>
+
+  <option value="8">Accessories</option>
+
+</select>
+<label for="id_sku">Sku:</label><input type="text" name="sku" maxlength="254" id="id_sku">
+<label for="id_name">Name:</label><input type="text" name="name" value="Shirt2" maxlength="254" required="" id="id_name">
+<label for="id_description">Description:</label><textarea name="description" cols="40" rows="10" required="" id="id_description">This is a shirt.</textarea>
+<label for="id_price">Price:</label><input type="number" name="price" value="15.00" step="0.01" required="" id="id_price">
+<label for="id_image">Image:</label><input type="file" name="image" accept="image/*" id="id_image">
+        <button>Update profile</button>
+    </form>
+</div>
+
+  </div>
+  <!-- Custom Scripts -->
+  <script src="./E-Commerce_files/jquery.min.js.download"></script>
+  <script src="./E-Commerce_files/nav.js.download"></script>
+  <script src="./E-Commerce_files/sort.js.download"></script>
+  <script src="./E-Commerce_files/toast.js.download"></script>
+  <script src="./E-Commerce_files/saved_resource"></script>
+  
+  
+  <script src="./E-Commerce_files/stripe_elements.js.download"></script>
+
+
+<iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController8160" allowpaymentrequest="true" src="./E-Commerce_files/m-outer-6e6ed81584679d263bf5a2b0f15af9e1.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>

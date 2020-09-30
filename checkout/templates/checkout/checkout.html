@@ -31,8 +31,10 @@
                 <label for="">Save this delivery information to my profile</label>
                 <input type="checkbox" id="id_save_info" name="save-info" checked>
                 {% else %}
-                <a href="">Sign up</a>
-                <a href="">Sign in</a>
+                <div class="checkout-actions">
+                    <a href="{% url 'account_signup' %}">Sign up</a>
+                    <a href="% url 'account_login' %">Sign in</a>
+                </div>
                 {% endif %}
             </div>
         </fieldset>

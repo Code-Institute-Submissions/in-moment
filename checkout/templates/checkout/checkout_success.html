@@ -1,7 +1,25 @@
-<!-- Home Page Template -->
+<!-- Checkout Success Template -->
 {% extends "base.html" %} {% load static %} {% block content %}
-<div class="home">
-    <h1>When time stops all that is left to live <span>inMoment.</span></h1>
-    <a href="{% url 'products' %}">Shop now</a>
+<div class="order-details">
+    <h1>Order Details</h1>
+    <div>{{ order.order_number }}</div>
+    <div>{{ order.date }}</div>
+    {% for item in order.lineitems.all %}
+    <div class="order-item">
+        <div> {{ item.product.name }}</div>
+        <div> {{ item.quantity }}</div>
+    </div>
+    {% endfor %}
+    <h2>Delivery Details</h2>
+    <div>{{ order.full_name}}</div>
+    <div>{{ order.street_address1}}</div>
+    <div>{{ ordet.street_address2}}</div>
+    <div>{{ order.county}}</div>
+    <div>{{ order.country}}</div>
+    <h2>Billing details</h2>
+    <div>Total: {{ order.order_total }}</div>
+    <div>Delivery: {{ order.delivery_cost }}</div>
+    <div>Grand Total: {{ order.grand_total }}</div>
+    <a href="{% url 'products' %}">Look for something else?</a>
 </div>
 {% endblock content %}

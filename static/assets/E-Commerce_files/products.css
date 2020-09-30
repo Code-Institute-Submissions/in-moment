@@ -92,7 +92,6 @@
 
 @media screen and (min-width: 1080px) {
     .products {
-        margin: 0;
         width: 50%;
         float: right;
         margin-right: 10%;
@@ -102,18 +101,5 @@
         width: 50%;
         float: right;
         margin-right: 10%;
-    }
-
-    .add_product{
-        width: 50%;
-        float: right;
-        margin-right: 10%;
-    }
-
-    .product-detail {
-        margin: 0;
-        width: 25%;
-        float: right;
-        margin-right: 25%;
     }
 }
