@@ -27,3 +27,7 @@ class Product(models.Model):
     # Overriding to string method.
     def __str__(self):
         return self.name
+
+class Review(models.Model):
+    product = models.ForeignKey("Product", null=False, blank=False, on_delete=models.CASCADE)
+    body = models.CharField(max_length=254, null=False, blank=False)

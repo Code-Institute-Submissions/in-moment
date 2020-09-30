@@ -23,5 +23,13 @@
     <a id="update" href="{% url 'edit_product' product.id %}">Update</a>
     <a href="{% url 'delete_product' product.id %}">Delete</a>
     {% endif %}
+    <form action="{% url 'product_detail' product.id %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="hidden" name="product" value="{{ product }}">
+    </form>
+    {% for review in reviews %}
+    {{ review.body }}
+    {% endfor %}
 </div>
 {% endblock content %}
