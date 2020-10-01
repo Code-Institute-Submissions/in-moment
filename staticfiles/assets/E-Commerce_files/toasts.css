@@ -1,0 +1,40 @@
+.message {
+    position: absolute;
+    top: 5em;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em;
+    opacity: .9;
+    font-weight: 700;
+    transition: all 1s;
+    z-index: 4;
+}
+
+.toast {
+    padding: 1em;
+}
+
+.success {
+    background-color: var(--color-1);
+}
+
+.warning {
+    background-color: var(--color-4);
+    color: #fff;
+}
+
+.error {
+    background-color: var(--color-2);
+    color: #fff;
+}
+
+.info {
+    background-color: var(--color-3);
+}
+
+.toast-close {
+    opacity: 0;
+}

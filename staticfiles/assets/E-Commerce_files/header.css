@@ -1,0 +1,123 @@
+/* Stylesheet for header, search and navigation bars. */
+/* Action Bar */
+.action-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-3);
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    z-index: 2;
+    align-items: center;
+}
+
+.action-bar *:hover{
+    cursor: pointer;
+}
+
+.active-btn {
+    color: var(--color-1);
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: 'Montez', cursive;
+}
+
+.sub-actions {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+/* Nav Bar */
+.nav-bar {
+    position: fixed;
+    top: 4em;
+    left: 0;
+    right: 0;
+    background-color: var(--color-3);
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all .5s ease-in-out;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    padding: .5em;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    color: var(--color-1);
+    cursor: pointer;
+}
+
+.nav-item:nth-last-child(2) {
+    border-top: 1px solid #000;
+}
+/* Search Bar */
+.search-bar {
+    position: fixed;
+    top: 4em;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 1em;
+    justify-content: space-around;
+    background-color: var(--color-3);
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all .5s ease-in-out;
+}
+/* Open Bar Animation */
+.open-bar {
+    transform: translateY(0);
+}
+
+@media screen and (min-width:1080px) {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 30%;
+        background-color: var(--color-3);
+        z-index: 2;
+        transform: unset;
+        box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    }
+
+    .nav {
+        height: 100%;
+        justify-content: center;
+    }
+
+    .search-bar {
+        position: fixed;
+        top: 0;
+        width: 30%;
+        display: flex;
+        padding: 1em;
+        justify-content: space-around;
+        background-color: var(--color-3);
+        z-index: 2;
+        transform: unset;
+    }
+
+    #search-btn {
+        display: none;
+    }
+
+    .sub-actions {
+        justify-content: flex-end;
+    }
+}

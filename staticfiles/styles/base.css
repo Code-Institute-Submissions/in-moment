@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+
+:root {
+    --color-1: #69A2B0;
+    --color-2: #E05263;
+    --color-3: #E0CBA8;
+    --color-4: #67597A;
+    --color-5: #544E61;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+.app {
+    width: 100%;
+    margin-top: 5em;
+    min-height: calc(100vh - 5em);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 80%;
+    padding: 1em;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--color-4);
+    outline: none;
+}
+
+textarea {
+    border: 2px solid var(--color-4);
+    padding: 1em;
+    outline: none;
+}
+
+select {
+    width: 50%;
+    padding: 1em;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--color-4);
+    outline: none;
+    background-color: #fff;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=email]:focus {
+    border-bottom: 2px solid var(--color-1);
+}
+
+textarea:focus {
+    border-bottom: 2px solid var(--color-1);
+}
+
+input[type=number] {
+    text-align: center;
+    width: 20%;
+    padding: 1em;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--color-4);
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: var(--color-2);
+    padding: 1em;
+    color: #fff;
+    border: none;
+}
+
+button {
+    border: none;
+    background-color: var(--color-3);
+}
+
+button:hover,
+button:focus {
+    color: var(--color-1);
+    cursor: pointer;
+    outline: none;
+}
+.btn {
+    background-color: var(--color-2);
+    text-align: center;
+    width: 50%;
+    padding: .5em 0;
+    color: #fff;
+}
+
+.secondary {
+    background-color: var(--color-4);
+}

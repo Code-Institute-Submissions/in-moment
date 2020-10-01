@@ -1,0 +1,110 @@
+/* Stylesheet related to all cart templates. */
+.cart {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5.9em;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.cart-item .product {
+    margin: 0;
+}
+
+.cart-details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-details * {
+    margin: .5em;
+}
+
+.cart-actions {
+    margin: 1em 0;
+}
+
+.cart-actions * {
+    margin-top: 1em;
+}
+
+.update-form {
+    display: flex;
+    justify-content: center;
+}
+
+.update-form input[type=number] {
+    width: 50%;
+}
+
+.sub-total {
+    font-size: 1.1rem;
+}
+
+.grand-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.update-item {
+    background-color: var(--color-4);
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-buttons .btn {
+    font-size: 1.2rem;
+    width: unset;
+    padding: .5em 1em;
+}
+
+.cart-add {
+    font-size: .9rem;
+}
+
+.no-items {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+.no-items a {
+        background-color: var(--color-2);
+        padding: 1em 2em;
+        margin-top: 3em;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #fff;
+}
+
+@media screen and (min-width: 1080px) {
+    .cart{
+        margin: 0;
+        width: 40%;
+    float: right;
+    margin-right: 10%;
+    }
+
+    .no-items{
+        width: 40%;
+    float: right;
+    margin-right: 10%;
+    }
+}

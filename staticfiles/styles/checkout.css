@@ -1,0 +1,122 @@
+.checkout {
+    width: 90%;
+    margin: 1em auto;
+}
+
+.checkout-legend {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.checkout-fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    margin: 1em 0;
+}
+
+.checkout input {
+    width: 100%;
+}
+
+.checkout-label {
+    padding: .5em;
+}
+
+.checkout button {
+    padding: 1em 2em;
+    font-weight: 700;
+    background-color: var(--color-2);
+    color: #fff;
+}
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    border-bottom: 2px solid var(--color-1);
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border-bottom: 2px solid var(--color-4);
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-details h1,
+.order-details h2 {
+    padding: 1em 0;
+}
+
+.order-item {
+    padding: .5em 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.order-details a {
+    margin: 1em 0;
+    padding: 1em 2em;
+    background-color: var(--color-2);
+    font-weight: 700;
+    color: #fff;
+
+}
+
+.checkout-actions {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.checkout-actions a {
+    color: var(--color-2);
+}
+
+@media screen and (min-width: 1080px) {
+    .checkout{
+        width: 40%;
+    float: right;
+    margin-right: 10%;
+    }
+
+    .order-details{
+        width: 40%;
+    float: right;
+    margin-right: 10%;
+    }
+}
